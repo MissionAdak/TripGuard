@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+.react-flow__node {
+  @apply rounded-md;
+}
+
+.react-flow__handle {
+  @apply w-2 h-2 rounded-full;
+}
+
+/* Base custom utility classes for graph */
+.graph-node-safe {
+  @apply border-green-500/50 bg-green-500/10 text-green-400;
+}
+.graph-node-at-risk {
+  @apply border-yellow-500/50 bg-yellow-500/10 text-yellow-400;
+}
+.graph-node-disrupted {
+  @apply border-red-500/50 bg-red-500/10 text-red-400;
+}
+.graph-node-recovered {
+  @apply border-blue-500/50 bg-blue-500/10 text-blue-400;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #0b1220;
+  z-index: 0;
+}
